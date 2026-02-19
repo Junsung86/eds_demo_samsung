@@ -1,3 +1,4 @@
 mountpoints:
   /: https://da.live/source/Junsung86/eds-demo-samsung
-
+folders:
+  /tools/: /tools/
