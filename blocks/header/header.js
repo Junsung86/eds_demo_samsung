@@ -137,6 +137,20 @@ export default async function decorate(block) {
     brandLink.closest('.button-container').className = '';
   }
 
+  // replace brand text with SVG logo
+  const brandP = navBrand.querySelector('p');
+  if (brandP) {
+    const brandAnchor = brandP.querySelector('a') || document.createElement('a');
+    if (!brandAnchor.href) brandAnchor.href = '/';
+    const logoImg = document.createElement('img');
+    logoImg.src = '/icons/samsung-newsroom-sg.svg';
+    logoImg.alt = 'Samsung Newsroom Singapore';
+    brandAnchor.textContent = '';
+    brandAnchor.appendChild(logoImg);
+    brandP.textContent = '';
+    brandP.appendChild(brandAnchor);
+  }
+
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
     navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
