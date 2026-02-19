@@ -137,23 +137,6 @@ export default async function decorate(block) {
     brandLink.closest('.button-container').className = '';
   }
 
-  // style brand: "Samsung" and "Newsroom" bold, "Singapore" normal weight
-  const brandP = navBrand.querySelector('p');
-  if (brandP) {
-    const brandAnchor = brandP.querySelector('a');
-    const container = brandAnchor || brandP;
-    const fullText = container.textContent.replace(/\s+/g, ' ').trim();
-    if (fullText.includes('Samsung') && fullText.includes('Newsroom')) {
-      const afterNewsroom = fullText.substring(fullText.indexOf('Newsroom') + 'Newsroom'.length).trim();
-      const samsungStrong = document.createElement('strong');
-      samsungStrong.textContent = 'Samsung';
-      const newsroomStrong = document.createElement('strong');
-      newsroomStrong.textContent = 'Newsroom';
-      container.textContent = '';
-      container.append(samsungStrong, '\n', newsroomStrong, afterNewsroom ? ` ${afterNewsroom}` : '');
-    }
-  }
-
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
     navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
