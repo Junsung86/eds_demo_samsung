@@ -171,7 +171,8 @@ header nav .nav-brand img {
 /* sections */
 header nav .nav-sections {
   grid-area: sections;
-  flex: 1 1 auto;
+  flex: 0 1 auto;
+  margin-left: auto;
   display: none;
   visibility: hidden;
 }
@@ -323,8 +324,8 @@ header nav .nav-tools {
 
 header nav .nav-tools .icon {
   display: inline-flex;
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
   cursor: pointer;
 }
 
