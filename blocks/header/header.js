@@ -173,7 +173,7 @@ export default async function decorate(block) {
   if (!navTools) {
     navTools = document.createElement('div');
     navTools.classList.add('nav-tools');
-    navTools.innerHTML = '<p><span class="icon icon-globe"></span> <span class="icon icon-search"></span></p>';
+    navTools.innerHTML = '<p><span class="icon icon-search"></span> <span class="icon icon-globe"></span></p>';
     nav.append(navTools);
   } else {
     // convert :icon-name: text to icon spans (local dev)
@@ -191,7 +191,7 @@ export default async function decorate(block) {
     // add icons if none present (AEM pipeline may strip spans)
     if (!navTools.querySelector('.icon')) {
       const target = navTools.querySelector('p') || navTools;
-      target.innerHTML = '<span class="icon icon-globe"></span> <span class="icon icon-search"></span>';
+      target.innerHTML = '<span class="icon icon-search"></span> <span class="icon icon-globe"></span>';
     }
   }
   decorateIcons(navTools);
