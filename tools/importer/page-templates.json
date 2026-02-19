@@ -1,0 +1,20 @@
+{
+  "templates": [
+    {
+      "name": "samsung-newsroom-article",
+      "urls": [
+        "https://news.samsung.com/sg/coming-soon-a-unified-galaxy-camera-experience-built-for-confident-creation"
+      ],
+      "description": "Samsung Newsroom Singapore article page with body text and embedded social media content (Instagram reels)",
+      "blocks": [
+        {
+          "name": "embed",
+          "instances": [
+            "div[align=\"center\"]:has(iframe.instagram-media)",
+            ".text_cont div[align=\"center\"]"
+          ]
+        }
+      ]
+    }
+  ]
+}
