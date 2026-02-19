@@ -1,4 +1,4 @@
-import { getMetadata } from '../../scripts/aem.js';
+import { getMetadata, decorateIcons } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 
 // media query match that indicates mobile/tablet width
@@ -149,6 +149,23 @@ export default async function decorate(block) {
         }
       });
     });
+  }
+
+  // convert :icon-name: text to icon spans in tools
+  const navTools = nav.querySelector('.nav-tools');
+  if (navTools) {
+    const walker = document.createTreeWalker(navTools, NodeFilter.SHOW_TEXT);
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach((node) => {
+      const text = node.textContent;
+      if (/:([a-z-]+):/i.test(text)) {
+        const span = document.createElement('span');
+        span.innerHTML = text.replace(/:([a-z-]+):/gi, (_, name) => `<span class="icon icon-${name}"></span>`);
+        node.replaceWith(...span.childNodes);
+      }
+    });
+    decorateIcons(navTools);
   }
 
   // hamburger for mobile
