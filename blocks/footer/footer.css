@@ -1,20 +1,57 @@
 footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+  background-color: #363636;
+  color: #fff;
+  font-size: 12px;
 }
 
 footer .footer > div {
   margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
+  max-width: 1360px;
+  padding: 20px 24px 15px;
+  text-align: center;
+}
+
+footer .footer > div:first-child {
+  padding-top: 30px;
+  border-bottom: 1px solid #555;
+  padding-bottom: 20px;
+}
+
+footer .footer > div:last-child {
+  padding-top: 15px;
+  padding-bottom: 25px;
 }
 
 footer .footer p {
   margin: 0;
 }
 
+footer .footer p strong {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+footer .footer a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+footer .footer a:hover {
+  text-decoration: underline;
+}
+
+footer .footer > div:last-child a {
+  display: inline-block;
+  margin: 0 8px;
+  font-size: 12px;
+}
+
 @media (width >= 900px) {
   footer .footer > div {
-    padding: 40px 32px 24px;
+    padding: 20px 32px 15px;
   }
 }
