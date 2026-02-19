@@ -165,32 +165,15 @@ export default async function decorate(block) {
     });
   }
 
-  // ensure tools section exists and has globe and search icons
+  // ensure tools section exists and has search and globe icons
   let navTools = nav.querySelector('.nav-tools');
   if (!navTools) {
     navTools = document.createElement('div');
     navTools.classList.add('nav-tools');
-    navTools.innerHTML = '<p><span class="icon icon-search"></span> <span class="icon icon-globe"></span></p>';
     nav.append(navTools);
-  } else {
-    // convert :icon-name: text to icon spans (local dev)
-    const walker = document.createTreeWalker(navTools, NodeFilter.SHOW_TEXT);
-    const textNodes = [];
-    while (walker.nextNode()) textNodes.push(walker.currentNode);
-    textNodes.forEach((node) => {
-      const text = node.textContent;
-      if (/:([a-z-]+):/i.test(text)) {
-        const span = document.createElement('span');
-        span.innerHTML = text.replace(/:([a-z-]+):/gi, (_, name) => `<span class="icon icon-${name}"></span>`);
-        node.replaceWith(...span.childNodes);
-      }
-    });
-    // add icons if none present (AEM pipeline may strip spans)
-    if (!navTools.querySelector('.icon')) {
-      const target = navTools.querySelector('p') || navTools;
-      target.innerHTML = '<span class="icon icon-search"></span> <span class="icon icon-globe"></span>';
-    }
   }
+  // always set clean icon markup to avoid duplicates from fragment decoration
+  navTools.innerHTML = '<p><span class="icon icon-search"></span> <span class="icon icon-globe"></span></p>';
   decorateIcons(navTools);
 
   // hamburger for mobile
