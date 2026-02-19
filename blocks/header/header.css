@@ -148,7 +148,7 @@ header .nav-brand {
   line-height: 1.2;
 }
 
-header .nav-brand a {
+header nav .nav-brand a {
   text-decoration: none;
   color: #000;
 }
