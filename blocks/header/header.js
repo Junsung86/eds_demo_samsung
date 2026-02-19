@@ -137,21 +137,21 @@ export default async function decorate(block) {
     brandLink.closest('.button-container').className = '';
   }
 
-  // make "Newsroom" bold in brand while keeping "Singapore" normal weight
+  // style brand: "Samsung" and "Newsroom" bold, "Singapore" normal weight
   const brandP = navBrand.querySelector('p');
   if (brandP) {
-    brandP.childNodes.forEach((node) => {
-      if (node.nodeType === Node.TEXT_NODE && node.textContent.includes('Newsroom')) {
-        const text = node.textContent;
-        const match = text.match(/(.*Newsroom)(.*)/);
-        if (match) {
-          const bold = document.createElement('strong');
-          bold.textContent = match[1].trim();
-          const rest = document.createTextNode(` ${match[2].trim()}`);
-          node.replaceWith(bold, rest);
-        }
-      }
-    });
+    const brandAnchor = brandP.querySelector('a');
+    const container = brandAnchor || brandP;
+    const fullText = container.textContent.replace(/\s+/g, ' ').trim();
+    if (fullText.includes('Samsung') && fullText.includes('Newsroom')) {
+      const afterNewsroom = fullText.substring(fullText.indexOf('Newsroom') + 'Newsroom'.length).trim();
+      const samsungStrong = document.createElement('strong');
+      samsungStrong.textContent = 'Samsung';
+      const newsroomStrong = document.createElement('strong');
+      newsroomStrong.textContent = 'Newsroom';
+      container.textContent = '';
+      container.append(samsungStrong, '\n', newsroomStrong, afterNewsroom ? ` ${afterNewsroom}` : '');
+    }
   }
 
   const navSections = nav.querySelector('.nav-sections');
@@ -168,13 +168,14 @@ export default async function decorate(block) {
     });
   }
 
-  // convert :icon-name: text to icon spans in tools
+  // ensure tools section has globe and search icons
   const navTools = nav.querySelector('.nav-tools');
   if (navTools) {
+    // convert :icon-name: text to icon spans (local dev)
     const walker = document.createTreeWalker(navTools, NodeFilter.SHOW_TEXT);
-    const nodes = [];
-    while (walker.nextNode()) nodes.push(walker.currentNode);
-    nodes.forEach((node) => {
+    const textNodes = [];
+    while (walker.nextNode()) textNodes.push(walker.currentNode);
+    textNodes.forEach((node) => {
       const text = node.textContent;
       if (/:([a-z-]+):/i.test(text)) {
         const span = document.createElement('span');
@@ -182,6 +183,12 @@ export default async function decorate(block) {
         node.replaceWith(...span.childNodes);
       }
     });
+    // add icons if none present (AEM pipeline strips spans)
+    if (!navTools.querySelector('.icon')) {
+      const toolsP = navTools.querySelector('p') || navTools.querySelector('.default-content-wrapper') || navTools;
+      const target = toolsP.querySelector('p') || toolsP;
+      target.innerHTML = '<span class="icon icon-globe"></span> <span class="icon icon-search"></span>';
+    }
     decorateIcons(navTools);
   }
 
