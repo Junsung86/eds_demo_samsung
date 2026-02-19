@@ -33,6 +33,11 @@ Galaxy fans and interested consumers can register their interest via [this site]
 
 \[1\] *Terms and conditions apply.*
 
+| **Article Tags** |
+| --- |
+| [Galaxy](https://news.samsung.com/sg/tag/galaxy) [Galaxy AI](https://news.samsung.com/sg/tag/galaxy-ai) |
+| Products > [Mobile](https://news.samsung.com/sg/category/products/mobile) |
+
 | **Metadata** | |
 | --- | --- |
 | title | Coming Soon: A Unified Galaxy Camera Experience Built for Confident Creation |
