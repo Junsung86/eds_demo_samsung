@@ -78,7 +78,7 @@
 body {
   display: none;
   margin: 0;
-  background-color: var(--background-color);
+  background-color: #f6f6f6;
   color: var(--text-color);
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
@@ -149,8 +149,15 @@ pre {
   white-space: pre;
 }
 
+main {
+  background-color: var(--background-color);
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 50px 24px;
+}
+
 main > div {
-  margin: 40px 16px;
+  margin: 40px 0;
 }
 
 input,
@@ -260,6 +267,10 @@ main > .section:first-of-type {
 }
 
 @media (width >= 900px) {
+  main {
+    padding: 50px 40px;
+  }
+
   main > .section > div {
     padding: 0 32px;
   }
