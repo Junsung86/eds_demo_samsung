@@ -1,5 +1,9 @@
 # Coming Soon: A Unified Galaxy Camera Experience Built for Confident Creation
 
+| **Article Info** |
+| --- |
+| 18/02/2026 |
+
 Turning a photo from day to night in seconds. Restoring missing parts of objects in images – like a bite taken out of cake. Seamlessly merging multiple photos into a single, cohesive result. These are the kinds of creative capabilities that once required professional skills or hours of editing. Now they're about to become possible in minutes, directly from a phone, by simply asking in your own words.
 
 | **Embed** |
