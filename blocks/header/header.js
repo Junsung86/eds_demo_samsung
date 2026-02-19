@@ -137,6 +137,23 @@ export default async function decorate(block) {
     brandLink.closest('.button-container').className = '';
   }
 
+  // make "Newsroom" bold in brand while keeping "Singapore" normal weight
+  const brandP = navBrand.querySelector('p');
+  if (brandP) {
+    brandP.childNodes.forEach((node) => {
+      if (node.nodeType === Node.TEXT_NODE && node.textContent.includes('Newsroom')) {
+        const text = node.textContent;
+        const match = text.match(/(.*Newsroom)(.*)/);
+        if (match) {
+          const bold = document.createElement('strong');
+          bold.textContent = match[1].trim();
+          const rest = document.createTextNode(` ${match[2].trim()}`);
+          node.replaceWith(bold, rest);
+        }
+      }
+    });
+  }
+
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
     navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
