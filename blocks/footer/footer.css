@@ -7,19 +7,8 @@ footer {
 footer .footer > div {
   margin: auto;
   max-width: 1360px;
-  padding: 20px 24px 15px;
+  padding: 30px 24px 25px;
   text-align: center;
-}
-
-footer .footer > div:first-child {
-  padding-top: 30px;
-  border-bottom: 1px solid #555;
-  padding-bottom: 20px;
-}
-
-footer .footer > div:last-child {
-  padding-top: 15px;
-  padding-bottom: 25px;
 }
 
 footer .footer p {
@@ -44,7 +33,18 @@ footer .footer a:hover {
   text-decoration: underline;
 }
 
-footer .footer > div:last-child a {
+/* brand + nav links section */
+footer .footer > div > .section:first-child {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #555;
+}
+
+/* social links section */
+footer .footer > div > .section:last-child {
+  padding-top: 15px;
+}
+
+footer .footer > div > .section:last-child a {
   display: inline-block;
   margin: 0 8px;
   font-size: 12px;
@@ -52,6 +52,24 @@ footer .footer > div:last-child a {
 
 @media (width >= 900px) {
   footer .footer > div {
-    padding: 20px 32px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 45px 40px;
+  }
+
+  footer .footer > div > .section:first-child {
+    text-align: left;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  footer .footer > div > .section:last-child {
+    text-align: right;
+    padding-top: 0;
+  }
+
+  footer .footer > div > .section:last-child a {
+    margin: 0 0 0 16px;
   }
 }

@@ -127,6 +127,26 @@
   padding: 30px 24px;
   background-color: #f6f6f6;
   margin: 40px -24px -50px;
+  position: relative;
+}
+
+.section.pagination::before,
+.section.pagination::after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  width: 24px;
+  height: 24px;
+}
+
+.section.pagination::before {
+  left: 0;
+  background: radial-gradient(circle at 0 0, var(--background-color) 24px, #f6f6f6 24px);
+}
+
+.section.pagination::after {
+  right: 0;
+  background: radial-gradient(circle at 100% 0, var(--background-color) 24px, #f6f6f6 24px);
 }
 
 /* collapse empty sections after pagination so grey reaches bottom */
