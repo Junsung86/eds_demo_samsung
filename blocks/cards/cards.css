@@ -125,6 +125,8 @@
 .section.pagination {
   text-align: center;
   padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #f6f6f6;
 }
 
 .section.pagination .default-content-wrapper p {
