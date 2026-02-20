@@ -131,6 +131,7 @@
   margin: 0;
 }
 
+/* stylelint-disable-next-line no-descending-specificity */
 .section.pagination .default-content-wrapper p a {
   display: inline-block;
   width: 44px;
@@ -144,13 +145,14 @@
   margin: 0 8px;
 }
 
-.section.pagination .default-content-wrapper p a:hover {
-  background-color: #f0f0f0;
-}
-
+/* stylelint-disable-next-line no-descending-specificity */
 .section.pagination .default-content-wrapper p strong a {
   color: #fff;
   background-color: #2963ad;
+}
+
+.section.pagination .default-content-wrapper p a:hover {
+  background-color: #f0f0f0;
 }
 
 .section.pagination .default-content-wrapper p strong a:hover {
