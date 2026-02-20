@@ -126,13 +126,18 @@
   text-align: center;
   padding: 30px 24px;
   background-color: #f6f6f6;
-  margin: 0 -24px -50px;
+  margin: 40px -24px -50px;
+}
+
+/* collapse empty sections after pagination so grey reaches bottom */
+.section.pagination ~ .section {
+  margin: 0;
 }
 
 @media (width >= 900px) {
   .section.pagination {
     padding: 30px 40px;
-    margin: 0 -40px -50px;
+    margin: 40px -40px -50px;
   }
 }
 
