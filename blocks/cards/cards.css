@@ -27,6 +27,16 @@
 }
 
 /* article-list variant — horizontal cards for category/listing pages */
+.section:has(.cards.article-list) .default-content-wrapper h1 {
+  color: #2963ad;
+  font-size: 30px;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  text-decoration-thickness: 2px;
+  margin-bottom: 24px;
+}
+
 .cards.article-list > ul {
   grid-template-columns: 1fr;
   gap: 0;
@@ -34,45 +44,38 @@
 
 .cards.article-list > ul > li {
   border: none;
-  border-bottom: 1px solid #dadada;
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  padding: 24px 0;
-}
-
-.cards.article-list > ul > li:last-child {
-  border-bottom: none;
+  margin-bottom: 40px;
 }
 
 .cards.article-list .cards-card-image {
-  flex: 0 0 280px;
-  max-width: 280px;
-  margin-right: 32px;
+  flex: 0 0 360px;
+  max-width: 360px;
+  margin-right: 20px;
 }
 
 .cards.article-list > ul > li img {
   aspect-ratio: 728 / 410;
-  border-radius: 4px;
 }
 
 .cards.article-list .cards-card-body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   flex: 1;
 }
 
 .cards.article-list .cards-card-body .badge {
   display: inline-block;
-  border: 1px solid #1273de;
-  color: #1273de;
-  font-size: 12px;
-  font-weight: 700;
-  padding: 2px 10px;
-  margin-bottom: 8px;
-  border-radius: 2px;
+  border: 1px solid #356cb1;
+  color: #356cb1;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 1px 10px;
+  margin-bottom: 10px;
   width: fit-content;
 }
 
@@ -81,11 +84,11 @@
 }
 
 .cards.article-list .cards-card-body p a {
-  color: var(--text-color, #000);
+  color: #000;
   text-decoration: none;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 1.5;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.4;
   display: block;
 }
 
@@ -95,10 +98,11 @@
 
 .cards.article-list .cards-card-body .date {
   font-size: 14px;
-  color: #888;
-  margin-top: 12px;
-  padding-top: 12px;
-  border-top: 1px solid #dadada;
+  color: #5d5d5d;
+  padding-top: 15px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid #bcbcbc;
+  margin-top: auto;
 }
 
 @media (width < 600px) {
@@ -110,5 +114,9 @@
 
   .cards.article-list .cards-card-body p a {
     font-size: 15px;
+  }
+
+  .cards.article-list > ul > li {
+    margin-bottom: 24px;
   }
 }
