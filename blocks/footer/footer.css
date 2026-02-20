@@ -45,9 +45,32 @@ footer .footer > div > .section:last-child {
 }
 
 footer .footer > div > .section:last-child a {
-  display: inline-block;
-  margin: 0 8px;
-  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin: 0 4px;
+  border: 1px solid #666;
+  border-radius: 50%;
+  text-decoration: none;
+}
+
+footer .footer > div > .section:last-child a:hover {
+  border-color: #fff;
+  text-decoration: none;
+}
+
+footer .footer .icon {
+  display: inline-flex;
+  width: 20px;
+  height: 20px;
+}
+
+footer .footer .icon img {
+  width: 100%;
+  height: 100%;
+  filter: brightness(0) invert(1);
 }
 
 @media (width >= 900px) {
